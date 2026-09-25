@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALNOVA SHOES</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+    padding: 20px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 390px;
+    text-align: center;
+}
+
+.tarjeta {
+    width: 100%;
+    height: 570px;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.interior {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+.tarjeta.girada .interior {
+    transform: rotateY(180deg);
+}
+
+.cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border: 1px solid #b98b2f;
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at center, #171717 0%, #080808 55%, #000 100%);
+    box-shadow: 0 0 30px rgba(190, 145, 55, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.frente img {
+    width: 78%;
+    max-width: 285px;
+    height: auto;
+    margin-bottom: 35px;
+}
+
+.gracias {
+    font-size: 27px;
+    letter-spacing: 2px;
+    color: #d6aa50;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.toque {
+    position: absolute;
+    bottom: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #aaa;
+}
+
+.reverso {
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.frase {
+    font-size: 23px;
+    line-height: 1.6;
+    margin: 0 0 30px;
+    color: #f4f4f4;
+}
+
+.frase strong {
+    color: #d6aa50;
+    font-weight: bold;
+}
+
+.linea {
+    width: 75%;
+    height: 1px;
+    background: #b98b2f;
+    margin: 0 auto 28px;
+}
+
+.redes-titulo {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d6aa50;
+    margin-bottom: 18px;
+}
+
+.red {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 9px 0;
+    color: white;
+}
+
+.red span {
+    color: #d6aa50;
+    font-weight: bold;
+}
+
+.vuelve {
+    margin-top: 28px;
+    font-size: 19px;
+    color: #d6aa50;
+    letter-spacing: 1px;
+}
+
+.instruccion {
+    font-family: Arial, sans-serif;
+    color: #888;
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+@media (max-width: 380px) {
+    .tarjeta {
+        height: 530px;
+    }
+
+    .frase {
+        font-size: 20px;
+    }
+
+    .gracias {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="tarjeta" id="tarjeta">
+
+        <div class="interior">
+
+            <!-- FRENTE -->
+            <div class="cara frente">
+
+                <img src="file_00000000755c81f98635b3f3c948e355.png"
+                     alt="ALNOVA SHOES">
+
+                <p class="gracias">
+                    Gracias por tu compra
+                </p>
+
+                <div class="toque">
+                    TOCA LA TARJETA PARA GIRAR
+                </div>
+
+            </div>
+
+            <!-- REVERSO -->
+            <div class="cara reverso">
+
+                <p class="frase">
+                    Que nunca te falten motivos para seguir
+                    <strong>caminando</strong>
+                    hacia todo aquello que sueñas.
+                </p>
+
+                <div class="linea"></div>
+
+                <div class="redes-titulo">
+                    Síguenos en nuestras redes
+                </div>
+
+                <div class="red">
+                    Instagram<br>
+                    <span>@alnovashoes</span>
+                </div>
+
+                <div class="red">
+                    TikTok<br>
+                    <span>@alnovashoes</span>
+                </div>
+
+                <div class="vuelve">
+                    Vuelve pronto. ♡
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="instruccion">
+        Toca nuevamente para volver
+    </div>
+
+</div>
+
+<script>
+const tarjeta = document.getElementById("tarjeta");
+
+tarjeta.addEventListener("click", function() {
+    tarjeta.classList.toggle("girada");
+});
+</script>
+
+</body>
+</html>
